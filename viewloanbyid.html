@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View Loan By Id</title>
+    <script>
+        function validateForm() {
+            var customerId = document.forms["loanForm"]["customerid"].value;
+            var loanId = document.forms["loanForm"]["loanid"].value;
+            if (customerId == "" || loanId == "") {
+                alert("Customer Id and Loan Id are mandatory fields");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header
+        style="background-color: #00549f; color: white; padding: 10px; text-align: center; font-size: 24px; font-weight: bold;">
+        ABC Bank Loan Management</header>
+    <h2>View Loan By Id</h2>
+    <form name="loanForm" onsubmit="return validateForm()" method="POST" action="viewloanbyid.php"
+        style="border: 1px solid black; padding: 10px;">
+        <label for=" customerid">Customer Id:</label>
+        <input type="text" id="customerid" name="customerid" required><br><br>
+        <label for="loanid">Loan Id:</label>
+        <input type="text" id="loanid" name="loanid" required><br><br>
+        <input type="submit" value="View Loan"
+            style="background-color: #8B4513; color: white; font-size: 16px; padding: 10px 20px; border-radius: 5px; border: none;">
+    </form>
+</body>
+
+</html>
